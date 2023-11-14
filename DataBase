@@ -1,0 +1,21 @@
+create DATABASE UMC_DATABASE;
+
+use UMC_DATABASE;
+
+create table user
+(
+    id            bigint not null auto_increment,
+    name          varchar(10),
+    gender        varchar(10),
+    birth_date    date,
+    address       varchar(45),
+    spec_address  varchar(45),
+    age           int,
+    phone_num     int,
+    social_type   varchar(10),
+    status        varchar(15),
+    inactive_date datetime,
+    created_at    datetime(6) default current_timestamp(6),
+    updated_at    datetime(6) default current_timestamp(6),
+    PRIMARY KEY (id)
+);
