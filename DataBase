@@ -19,3 +19,121 @@ create table user
     updated_at    datetime(6) default current_timestamp(6),
     PRIMARY KEY (id)
 );
+
+create table term
+(
+    id bigint not null auto_increment,
+    title varchar(20),
+    content text,
+    required boolean,
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id)
+);
+
+create table agree_term
+(
+    id bigint not null auto_increment,
+    terms_id bigint,
+    user_id bigint,
+    agree boolean default false,
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id),
+    FOREIGN KEY (terms_id) references term (id),
+    FOREIGN KEY (user_id) references user (id)
+);
+
+create table food
+(
+    id int not null auto_increment,
+    name varchar(15),
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id)
+);
+
+create table user_food
+(
+    id bigint not null auto_increment,
+    user_id bigint,
+    food_id int,
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id),
+    foreign key (user_id) references user (id),
+    foreign key (food_id) references food (id)
+);
+
+create table store
+(
+    id bigint not null auto_increment,
+    name varchar(20),
+    address varchar(45),
+    spec_address varchar(50),
+    thumb_path varchar(255),
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id)
+);
+
+create table store_category
+(
+    id int not null auto_increment,
+    name varchar(20),
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id)
+);
+
+create table review
+(
+    id bigint not null auto_increment,
+    store_id bigint,
+    user_id bigint,
+    score int,
+    content varchar(200),
+    review_image_path varchar(255),
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id),
+    foreign key (store_id) references store (id),
+    foreign key (user_id) references user (id)
+);
+
+create table review_replies
+(
+    id bigint not null auto_increment,
+    review_id bigint,
+    reply_text text,
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id),
+    foreign key (review_id) references review (id)
+);
+
+create table mission
+(
+    id bigint not null auto_increment,
+    store_id bigint,
+    reward int,
+    deadline datetime,
+    content text,
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id),
+    foreign key (store_id) references store (id)
+);
+
+create table user_mission
+(
+    id bigint not null auto_increment,
+    user_id bigint,
+    mission_id bigint,
+    status varchar(15),
+    created_at datetime(6) default current_timestamp(6),
+    updated_at datetime(6) default current_timestamp(6),
+    primary key (id),
+    foreign key (user_id) references user (id),
+    foreign key (mission_id) references mission (id)
+);
