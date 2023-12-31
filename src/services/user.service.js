@@ -1,7 +1,7 @@
-import { BaseError } from "file:///C:/UMC-Node.js/test_folder/config/error.js";
-import { status } from "file:///C:/UMC-Node.js/test_folder/config/response.status.js";
-import { signinResponseDTO, reviewResponseDTO, missionResponseDTO, missionStatusResponseDTO } from "file:///C:/UMC-Node.js/test_folder/src/dtos/user.response.dto.js"
-import { addUser, getUser, getUserPreferToUserID, setPrefer, addReview, getReview, addMission, getMission, completeMission } from "file:///C:/UMC-Node.js/test_folder/src/models/user.dao.js";
+import { BaseError } from "../../config/error.js";
+import { status } from "../../config/response.status.js";
+import { signinResponseDTO, reviewResponseDTO, missionResponseDTO, missionStatusResponseDTO } from "./../dtos/user.response.dto.js"
+import { addUser, getUser, getUserPreferToUserID, setPrefer, addReview, getReview, addMission, getMission, completeMission } from "../models/user.dao.js";
 
 export const joinUser = async (body) => {
     const birth = new Date(body.birthYear, body.birthMonth, body.birthDay);

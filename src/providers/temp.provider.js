@@ -1,8 +1,8 @@
 // temp.service.js
 
-import { tempResponseDTO, flagResponseDTO } from "file:///C:/UMC-Node.js/test_folder/src/dtos/temp.response.dto.js";
-import { BaseError } from "file:///C:/UMC-Node.js/test_folder/config/error.js";
-import { status } from "file:///C:/UMC-Node.js/test_folder/config/response.status.js";
+import { tempResponseDTO, flagResponseDTO } from "./../dtos/temp.response.dto.js";
+import { BaseError } from "../../config/error.js";
+import { status } from "../../config/response.status.js";
 
 export const getTempData = () => {
     return tempResponseDTO("This is TEST! >.0");
@@ -10,7 +10,7 @@ export const getTempData = () => {
 
 export function CheckFlag(flag) {
         if (flag == 1)
-        throw new BaseError(status.UNAUTHORIZED);   // ¿¡·¯ ¹ß»ý½ÃÅ°±â
+        throw new BaseError(status.UNAUTHORIZED);   // ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½Å°ï¿½ï¿½
     else {
         return flagResponseDTO(flag);
     }

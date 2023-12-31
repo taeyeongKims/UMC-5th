@@ -3,7 +3,7 @@
 import express from "express";
 import asyncHandler from 'express-async-handler';
 
-import { userSignin, userReview, userMission, reviewPreview, progressingMissionPreview, missionPreview, userMissionComplete } from "file:///C:/UMC-Node.js/test_folder/src/controllers/user.controllers.js";
+import { userSignin, userReview, userMission, reviewPreview, progressingMissionPreview, missionPreview, userMissionComplete } from "../controllers/user.controllers.js";
 
 export const userRouter = express.Router({mergeParams: true});
 

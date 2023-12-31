@@ -1,10 +1,11 @@
 // index.js
-import { tempRouter } from 'file:///C:/UMC-Node.js/test_folder/src/routes/temp.route.js';
-import { userRouter } from 'file:///C:/UMC-Node.js/test_folder/src/routes/user.route.js';
-import { storeRouter } from 'file:///C:/UMC-Node.js/test_folder/src/routes/store.route.js';
-import { specs } from 'file:///C:/UMC-Node.js/test_folder/config/swagger.config.js';
-import { status } from 'file:///C:/UMC-Node.js/test_folder/config/response.status.js';
-import { response } from 'file:///C:/UMC-Node.js/test_folder/config/response.js';
+import { tempRouter } from './src/routes/temp.route.js';
+import { userRouter } from './src/routes/user.route.js';
+import { storeRouter } from './src/routes/store.route.js';
+import { healthRoute } from './src/routes/health.route.js';
+
+import { specs } from './config/swagger.config.js';
+
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -30,6 +31,7 @@ app.use('/temp', tempRouter);
 app.use('/user', userRouter);
 app.use('/user/:userId', userRouter);
 app.use('/store/:storeId', storeRouter);
+app.use('/health', healthRoute);
 
 // app.use((req, res, next) => {
 //     const err = new BaseError(status.INTERNAL_SERVER_ERROR);

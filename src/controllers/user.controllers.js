@@ -1,7 +1,7 @@
-import { response } from 'file:///C:/UMC-Node.js/test_folder/config/response.js';
-import { status } from 'file:///C:/UMC-Node.js/test_folder/config/response.status.js';
-import { joinUser, reviewUser, missionUser, missionUserComplete } from 'file:///C:/UMC-Node.js/test_folder/src/services/user.service.js';
-import { getReview, getMission, getProgressingMission } from 'file:///C:/UMC-Node.js/test_folder/src/providers/user.provider.js';
+import { response } from '../../config/response.js';
+import { status } from '../../config/response.status.js';
+import { joinUser, reviewUser, missionUser, missionUserComplete } from './../services/user.service.js';
+import { getReview, getMission, getProgressingMission } from './../providers/user.provider.js';
 
 export const userSignin = async (req, res, next) => {
     const signIn = req.body;

@@ -1,11 +1,11 @@
 // models/user.dao.js
 
-import { pool } from "file:///C:/UMC-Node.js/test_folder/config/db.config.js";
-import { BaseError } from "file:///C:/UMC-Node.js/test_folder/config/error.js";
-import { status } from "file:///C:/UMC-Node.js/test_folder/config/response.status.js";
-import { getStoreID, insertStoreSql, getMissionID, insertMissionSql, getReviewByReviewId, getReviewByReviewIdAtFirst} from "file:///C:/UMC-Node.js/test_folder/src/models/store.sql.js";
+import { pool } from "../../config/db.config.js";
+import { BaseError } from "../../config/error.js";
+import { status } from "../../config/response.status.js";
+import { getStoreID, insertStoreSql, getMissionID, insertMissionSql, getReviewByReviewId, getReviewByReviewIdAtFirst} from "./../models/store.sql.js";
 
-// Store µ¥ÀÌÅÍ »ðÀÔ
+// Store ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const addStore = async (data) => {
     try{
         const conn = await pool.getConnection();
@@ -19,7 +19,7 @@ export const addStore = async (data) => {
     }
 }
 
-// °¡°Ô Á¤º¸ ¾ò±â
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 export const getStore = async (storeId) => {
     try {
         const conn = await pool.getConnection();
@@ -37,7 +37,7 @@ export const getStore = async (storeId) => {
     }
 }
 
-// Mission µ¥ÀÌÅÍ »ðÀÔ
+// Mission ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const addMission = async (data) => {
     try{
         const conn = await pool.getConnection();
@@ -51,7 +51,7 @@ export const addMission = async (data) => {
     }
 }
 
-// ¹Ì¼Ç Á¤º¸ ¾ò±â
+// ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 export const getMission = async (missionId) => {
     try {
         const conn = await pool.getConnection();
@@ -69,7 +69,7 @@ export const getMission = async (missionId) => {
     }
 }
 
-//¸®ºä º¸±â
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const getPreviewReview = async (cursorId, size, storeId) => {
     try {
         const conn = await pool.getConnection();
