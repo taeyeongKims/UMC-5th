@@ -1,4 +1,4 @@
-깃name: Node.js Dev CI/CD
+name: Node.js Dev CI/CD
 
 on:
   pull_request:      # pull request -> merge 가 되었을 때 Github Action 실행!
