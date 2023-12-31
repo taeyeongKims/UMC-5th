@@ -1,3 +1,8 @@
-import express from "express";
+// health.route.js
 
-export const healthRouter = express.Router({mergeParams: true});
+import express from "express";
+import { healthController } from "../controllers/health.controller";
+
+export const healthRoute = express.Router();
+
+healthRoute.get('', healthController)
