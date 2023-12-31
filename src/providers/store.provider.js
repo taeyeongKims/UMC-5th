@@ -1,5 +1,5 @@
-import { previewReviewResponseDTO} from "file:///C:/UMC-Node.js/test_folder/src/dtos/store.response.dto.js";
-import { getPreviewReview} from "file:///C:/UMC-Node.js/test_folder/src/models/store.dao.js";
+import { previewReviewResponseDTO} from "./../dtos/store.response.dto.js";
+import { getPreviewReview} from "./../models/store.dao.js";
 
 
 export const getReview = async (storeId, query) => {

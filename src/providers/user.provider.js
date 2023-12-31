@@ -1,5 +1,5 @@
-import { previewReviewResponseDTO, previewMissionResponseDTO, previewProgressingMissionResponseDTO} from "file:///C:/UMC-Node.js/test_folder/src/dtos/user.response.dto.js";
-import { getPreviewReview, getPreviewMission, getPreviewProgressingMission} from "file:///C:/UMC-Node.js/test_folder/src/models/user.dao.js";
+import { previewReviewResponseDTO, previewMissionResponseDTO, previewProgressingMissionResponseDTO} from "./../dtos/user.response.dto.js";
+import { getPreviewReview, getPreviewMission, getPreviewProgressingMission} from "./../models/user.dao.js";
 
 
 export const getReview = async (userId, query) => {

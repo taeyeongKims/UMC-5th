@@ -1,5 +1,5 @@
-import { addStoreResponseDTO, addMissionResponseDTO } from "file:///C:/UMC-Node.js/test_folder/src/dtos/store.response.dto.js"
-import { addStore, getStore, addMission, getMission} from "file:///C:/UMC-Node.js/test_folder/src/models/store.dao.js";
+import { addStoreResponseDTO, addMissionResponseDTO } from "./../dtos/store.response.dto.js"
+import { addStore, getStore, addMission, getMission} from "./../models/store.dao.js";
 
 export const joinStore = async (body) => {
     const joinStoreData = await addStore({

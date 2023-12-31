@@ -1,13 +1,13 @@
 // models/user.dao.js
 
-import { pool } from "file:///C:/UMC-Node.js/test_folder/config/db.config.js";
-import { BaseError } from "file:///C:/UMC-Node.js/test_folder/config/error.js";
-import { status } from "file:///C:/UMC-Node.js/test_folder/config/response.status.js";
+import { pool } from "../../config/db.config.js";
+import { BaseError } from "../../config/error.js";
+import { status } from "../../config/response.status.js";
 import { connectFoodCategory, confirmEmail, getUserID, insertUserSql, getPreferToUserID, confirmStore, insertReviewSql, getReviewID, 
     confirmMission, insertMissionSql, getMissionID, getReviewByReviewIdAtFirst, getReviewByReviewId, getMissionByMissionIdAtFirst, getMissionByMissionId,
-    getProgressingMissionByMissionIdAtFirst, getProgressingMissionByMissionId, missionComplete, missionStatus } from "file:///C:/UMC-Node.js/test_folder/src/models/user.sql.js";
+    getProgressingMissionByMissionIdAtFirst, getProgressingMissionByMissionId, missionComplete, missionStatus } from "./../models/user.sql.js";
 
-// User µ¥ÀÌÅÍ »ðÀÔ
+// User ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const addUser = async (data) => {
     try{
         const conn = await pool.getConnection();
@@ -29,7 +29,7 @@ export const addUser = async (data) => {
     }
 }
 
-// »ç¿ëÀÚ Á¤º¸ ¾ò±â
+// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 export const getUser = async (userId) => {
     try {
         const conn = await pool.getConnection();
@@ -49,7 +49,7 @@ export const getUser = async (userId) => {
     }
 }
 
-// À½½Ä ¼±È£ Ä«Å×°í¸® ¸ÅÇÎ
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ Ä«ï¿½×°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const setPrefer = async (userId, foodCategoryId) => {
     try {
         const conn = await pool.getConnection();
@@ -65,7 +65,7 @@ export const setPrefer = async (userId, foodCategoryId) => {
     }
 }
 
-// »ç¿ëÀÚ ¼±È£ Ä«Å×°í¸® ¹ÝÈ¯
+// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ Ä«ï¿½×°ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 export const getUserPreferToUserID = async (userID) => {
     try {
         const conn = await pool.getConnection();
@@ -79,12 +79,12 @@ export const getUserPreferToUserID = async (userID) => {
     }
 }
 
-// User review µ¥ÀÌÅÍ »ðÀÔ
+// User review ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const addReview = async (data) => {
     try{
         const conn = await pool.getConnection();
         
-        const [confirm] = await pool.query(confirmStore, data.store_id); // °¡°Ô È®ÀÎ
+        const [confirm] = await pool.query(confirmStore, data.store_id); // ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
         if(!confirm[0].isExistStore){
             conn.release();
@@ -101,7 +101,7 @@ export const addReview = async (data) => {
     }
 }
 
-// ¸®ºä Á¤º¸ ¾ò±â
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 export const getReview = async (reviewId) => {
     try {
         const conn = await pool.getConnection();
@@ -121,11 +121,11 @@ export const getReview = async (reviewId) => {
     }
 }
 
-// User mission µ¥ÀÌÅÍ »ðÀÔ
+// User mission ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const addMission = async (data) => {
     try{
         const conn = await pool.getConnection();
-        const [confirm] = await pool.query(confirmMission, [data.user_id, data.mission_id]); // °¡°Ô È®ÀÎ
+        const [confirm] = await pool.query(confirmMission, [data.user_id, data.mission_id]); // ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
         if(confirm[0].isExistMission){
             conn.release();
@@ -142,7 +142,7 @@ export const addMission = async (data) => {
     }
 }
 
-// ¹Ì¼Ç Á¤º¸ ¾ò±â
+// ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 export const getMission = async (missionId) => {
     try {
         const conn = await pool.getConnection();
@@ -163,7 +163,7 @@ export const getMission = async (missionId) => {
 }
 
 
-//¸®ºä º¸±â
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const getPreviewReview = async (cursorId, size, userId) => {
     try {
         const conn = await pool.getConnection();
@@ -181,7 +181,7 @@ export const getPreviewReview = async (cursorId, size, userId) => {
     }
 }
 
-// Æ¯Á¤ °¡°Ô ¹Ì¼Ç º¸±â
+// Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const getPreviewMission = async (cursorId, size, storeId) => {
     try {
         const conn = await pool.getConnection();
@@ -199,7 +199,7 @@ export const getPreviewMission = async (cursorId, size, storeId) => {
     }
 }
 
-// ÁøÇà ÁßÀÎ ¹Ì¼Ç º¸±â
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const getPreviewProgressingMission = async (cursorId, size, userId) => {
     try {
         const conn = await pool.getConnection();
@@ -218,7 +218,7 @@ export const getPreviewProgressingMission = async (cursorId, size, userId) => {
 }
 
 
-// ¹Ì¼Ç »óÅÂ º¯°æ
+// ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 export const completeMission = async (userId, missionId) => {
     try {
         const conn = await pool.getConnection();

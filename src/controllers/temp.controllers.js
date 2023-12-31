@@ -1,8 +1,8 @@
 // temp.controller.js
 
-import { response } from 'file:///C:/UMC-Node.js/test_folder/config/response.js';
-import { getTempData, CheckFlag } from 'file:///C:/UMC-Node.js/test_folder/src/providers/temp.provider.js';
-import { status } from 'file:///C:/UMC-Node.js/test_folder/config/response.status.js';
+import { response } from '../../config/response.js';
+import { getTempData, CheckFlag } from '../providers/temp.provider.js';
+import { status } from '../../config/response.status.js';
 
 export const tempTest = (req, res, next) => {
     res.send(response(status.SUCCESS, getTempData()));

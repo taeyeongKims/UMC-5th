@@ -1,7 +1,7 @@
-import { response } from 'file:///C:/UMC-Node.js/test_folder/config/response.js';
-import { status } from 'file:///C:/UMC-Node.js/test_folder/config/response.status.js';
-import { joinStore, joinMission} from 'file:///C:/UMC-Node.js/test_folder/src/services/store.service.js';
-import { getReview } from 'file:///C:/UMC-Node.js/test_folder/src/providers/store.provider.js';
+import { response } from '../../config/response.js';
+import { status } from '../../config/response.status.js';
+import { joinStore, joinMission} from '../services/store.service.js';
+import { getReview } from '../providers/store.provider.js';
 
 export const storeAdd = async (req, res, next) => {
     const store_add = req.body;

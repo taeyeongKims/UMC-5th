@@ -1,10 +1,10 @@
 // index.js
-import { tempRouter } from 'file:///C:/UMC-Node.js/test_folder/src/routes/temp.route.js';
-import { userRouter } from 'file:///C:/UMC-Node.js/test_folder/src/routes/user.route.js';
-import { storeRouter } from 'file:///C:/UMC-Node.js/test_folder/src/routes/store.route.js';
-import { specs } from 'file:///C:/UMC-Node.js/test_folder/config/swagger.config.js';
-import { status } from 'file:///C:/UMC-Node.js/test_folder/config/response.status.js';
-import { response } from 'file:///C:/UMC-Node.js/test_folder/config/response.js';
+import { tempRouter } from './src/routes/temp.route.js';
+import { userRouter } from './src/routes/user.route.js';
+import { storeRouter } from './src/routes/store.route.js';
+import { specs } from './config/swagger.config.js';
+import { status } from './config/response.status.js';
+import { response } from './config/response.js';
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import express from 'express';
