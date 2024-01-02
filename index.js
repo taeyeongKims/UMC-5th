@@ -5,7 +5,8 @@ import { storeRouter } from './src/routes/store.route.js';
 import { healthRoute } from './src/routes/health.route.js';
 
 import { specs } from './config/swagger.config.js';
-import { status } from './config/response.status.js'
+import { status } from './config/response.status.js';
+import { response } from './config/response.js';
 
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
