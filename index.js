@@ -2,9 +2,12 @@
 import { tempRouter } from './src/routes/temp.route.js';
 import { userRouter } from './src/routes/user.route.js';
 import { storeRouter } from './src/routes/store.route.js';
+import { healthRoute } from './src/routes/health.route.js';
+
 import { specs } from './config/swagger.config.js';
 import { status } from './config/response.status.js';
 import { response } from './config/response.js';
+
 import SwaggerUi from 'swagger-ui-express';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -30,6 +33,12 @@ app.use('/temp', tempRouter);
 app.use('/user', userRouter);
 app.use('/user/:userId', userRouter);
 app.use('/store/:storeId', storeRouter);
+app.use('/health', healthRoute);
+
+
+app.get('/', (req, res, next) => {
+    res.send(response(status.SUCCESS, "루트 페이지!"));
+})
 
 // app.use((req, res, next) => {
 //     const err = new BaseError(status.INTERNAL_SERVER_ERROR);
@@ -48,3 +57,4 @@ app.use((err, req, res, next) => {
 app.listen(app.get('port'), () => {
     console.log(`Example app listening on port ${app.get('port')}`);
 });
+//test
