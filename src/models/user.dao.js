@@ -183,7 +183,7 @@ export const getPreviewReview = async (cursorId, size, userId) => {
 
 // Ư�� ���� �̼� ����
 export const getPreviewMission = async (cursorId, size, storeId) => {
-    try {
+    //try {
         const conn = await pool.getConnection();
         if(cursorId == "undefined" || typeof cursorId == "undefined" || cursorId == null){
             const [missions] = await pool.query(getMissionByMissionIdAtFirst, [parseInt(storeId), parseInt(size)]);
@@ -194,9 +194,9 @@ export const getPreviewMission = async (cursorId, size, storeId) => {
             conn.release();
             return missions;    
         }
-    } catch (err) {
-        throw new BaseError(status.PARAMETER_IS_WRONG);
-    }
+    //} catch (err) {
+    //    throw new BaseError(status.PARAMETER_IS_WRONG);
+    //}
 }
 
 // ���� ���� �̼� ����
