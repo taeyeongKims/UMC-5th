@@ -7,9 +7,9 @@ const options = {
         info: {
             title: 'UMC Study API',
             version: '1.0.0',
-            description: 'UMC Study API with express, API ¼³¸í'
+            description: 'UMC Study API with express, API ï¿½ï¿½ï¿½ï¿½'
         },
-        host: 'localhost:3000',
+        host: '43.202.8.151:3000',
         basepath: '../'
     },
     apis: ['./src/routes/*.js', './swagger/*']
